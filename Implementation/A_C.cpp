@@ -13,33 +13,21 @@ int main()
     {
         int a, b, n, ans, count = 0;
         cin >> a >> b >> n;
-        for (int i = 1; i <= 100000; i++)
+
+        while (a <= n && b <= n)
         {
             if (a > b)
             {
-                if (n > a)
-                {
-                    break;
-                }
-                else
-                {
-                    a = a + b;
-                    count += 1;
-                }
+                b += a;
+                count++;
             }
             else
             {
-                if (n > b)
-                {
-                    break;
-                }
-                else
-                {
-                    b = b + a;
-                    count += 1;
-                }
+                a += b;
+                count++;
             }
         }
+
         cout << count << "\n";
     }
     return 0;
